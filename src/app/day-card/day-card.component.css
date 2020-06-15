@@ -1,0 +1,29 @@
+.card {
+    height: 120px;
+    width: 143.6px;
+    z-index: 1;
+
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+
+    background-color: white;
+    color: black;
+    cursor: pointer;
+
+    font-weight: 600;
+    text-align: start;
+    text-indent: 12px;
+}
+
+.reminder {
+    font-size: 14px;
+    margin: 4px;
+    z-index: 100;
+    cursor: default;
+}
+
+.reminder:hover {
+    background-color: rgba(17, 17, 226, 0.904) !important;
+    color: #F0F0F0;
+}
+

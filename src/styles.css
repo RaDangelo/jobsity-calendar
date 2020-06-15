@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+day-card:nth-child(7n) > .card {
+    border-right: 1px solid black;
+}
+
+day-card:nth-child(7n) > .card,
+day-card:nth-child(7n + 1) > .card {
+    color: cornflowerblue;
+    background-color: rgba(190, 190, 190, 0.514);
+}
+
+day-card:nth-child(1) > .card,
+day-card:nth-child(2) > .card,
+day-card:nth-last-child(1) > .card,
+day-card:nth-last-child(2) > .card {
+    color: grey;
+    pointer-events: none;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

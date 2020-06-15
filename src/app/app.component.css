@@ -1,0 +1,38 @@
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+
+    height: 70%;
+    width: 70.4%;
+
+    text-align: center;
+    margin: auto;
+}
+
+.calendar-weekdays > .calendar-weekdays_list {
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 10px 0 0 0;
+
+    background-color: cornflowerblue;
+    color: white;
+    font-weight: 600;
+    
+    list-style-type: none;
+}
+
+.calendar-weekdays > .calendar-weekdays_list
+ > .calendar-weekdays_list_item {
+    margin: 10px 38px;
+    width: 70px;
+}
+
+.calendar-days {
+    display: flex;
+    flex-direction: row;
+
+    flex-wrap: wrap;
+}
+
+
