@@ -1,7 +1,0 @@
-<div class="card" title="Double Click to Add Reminder" (dblclick)="addNewReminder()">{{day}}
-
-    <div *ngFor="let re of reminders" (click)="editReminder(re)" title="Edit Event"
-     [style.background-color]="re.color" class="reminder">
-        {{re.time}} -
-        {{re.text}}</div>
-</div>

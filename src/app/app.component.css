@@ -35,4 +35,19 @@
     flex-wrap: wrap;
 }
 
+.header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.header > .subTitle {
+    font-size: 0.8rem;
+}
+
+.header > .title {
+    margin-bottom: 4px;
+}
+
 

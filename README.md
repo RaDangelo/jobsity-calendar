@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0-rc.0.
 
+## Open Weather Map API
+
+The API Key used to access the Weather Information is `e4e12be880c5fc1978be0be8c168a497`.
+
+## Installing Dependencies
+
+Run `npm install` to install the dependencies registered in the package.json file.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -17,6 +25,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Unit tests for creating a new reminder are inside the `app.component.spec.ts` file.
 
 ## Running end-to-end tests
 

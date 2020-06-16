@@ -12,7 +12,8 @@ day-card:nth-child(7n + 1) > .card {
 day-card:nth-child(1) > .card,
 day-card:nth-child(2) > .card,
 day-card:nth-last-child(1) > .card,
-day-card:nth-last-child(2) > .card {
+day-card:nth-last-child(2) > .card,
+day-card:nth-last-child(3) > .card {
     color: grey;
     pointer-events: none;
 }

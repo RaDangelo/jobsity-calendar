@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ReminderData } from '../model/reminder-data.model';
-import { WeatherService } from '../services/weather.service';
+import { ReminderModel } from '../../models/reminder.model';
+import { WeatherService } from '../../services/weather.service';
 
 @Component({
   selector: 'reminder-dialog',
@@ -10,22 +10,40 @@ import { WeatherService } from '../services/weather.service';
 })
 export class ReminderDialogComponent {
 
-  initData: ReminderData;
+  timeErrorMessage = 'Please choose the time!';
+  textErrorMessage = 'Please add a text!';
+  isTimeValid = true;
+  isTextValid = true;
+
+  initialData: ReminderModel;
   weather: any = <any>{};
 
   constructor(public dialogRef: MatDialogRef<ReminderDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: ReminderData,
+    @Inject(MAT_DIALOG_DATA) public data: ReminderModel,
     private weatherService: WeatherService) {
     dialogRef.disableClose = true;
 
-    this.initData = new ReminderData(data);
-    if (this.initData.city) {
-      this.getWeather(this.initData.city);
+    this.initialData = new ReminderModel(data);
+    if (this.initialData.city) {
+      this.getWeather(this.initialData.city);
     }
   }
 
+  saveReminder() {
+    if (this.validateData()) {
+      this.dialogRef.close(this.data);
+    }
+  }
+
+  private validateData() {
+    this.isTimeValid = this.data.time ? true : false;
+    this.isTextValid = this.data.text && this.data.text.length < 31 ? true : false;
+
+    return this.isTimeValid && this.isTextValid ? true : false;
+  }
+
   closeDialog() {
-    this.dialogRef.close(this.initData);
+    this.dialogRef.close(this.initialData);
   }
 
   getWeather(city: string) {
@@ -41,14 +59,6 @@ export class ReminderDialogComponent {
           console.log('Failed to get weather.');
         }, () => {
         })
-    }
-  }
-
-  getBackgroundColor() {
-    if (this.data) {
-      return this.data.color ? this.data.color : '#F0F0F0';
-    } else {
-      return '#F0F0F0';
     }
   }
 

@@ -1,18 +1,19 @@
-<h1 mat-dialog-title>{{initData.text ? 'Edit' : 'Create'}} Event</h1>
+<h1 mat-dialog-title>{{initialData.text ? 'Edit' : 'Create'}} Event</h1>
 <div mat-dialog-content class="dialog-content">
     <mat-form-field>
         <mat-label>Date</mat-label>
-        <input matInput [matDatepicker]="picker" name="dateInput" [(ngModel)]="data.date">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <input matInput readonly [matDatepicker]="picker" name="dateInput" [(ngModel)]="data.date">
         <mat-datepicker #picker [startAt]="data.date"></mat-datepicker>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Time</mat-label>
-        <input matInput type="time" name="timeInput" [(ngModel)]="data.time">
+        <input matInput required type="time" name="timeInput" [(ngModel)]="data.time">
+        <mat-error *ngIf="!isTimeValid">{{timeErrorMessage}}</mat-error>
     </mat-form-field>
     <mat-form-field>
         <mat-label>Text</mat-label>
-        <input matInput type="text" name="textInput" maxlength="30" [(ngModel)]="data.text">
+        <input matInput required type="text" name="textInput" maxlength="30" [(ngModel)]="data.text">
+        <mat-error *ngIf="!isTextValid">{{textErrorMessage}}</mat-error>
     </mat-form-field>
     <mat-form-field>
         <mat-label>City | 
@@ -27,5 +28,5 @@
 </div>
 <div mat-dialog-actions>
     <button mat-button (click)="closeDialog()" class="dialog-button">Cancel</button>
-    <button mat-button [mat-dialog-close]="data" class="dialog-button" cdkFocusInitial>Ok</button>
+    <button mat-button (click)="saveReminder()" class="dialog-button" cdkFocusInitial>Ok</button>
 </div>

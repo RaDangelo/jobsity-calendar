@@ -15,11 +15,16 @@
     text-indent: 12px;
 }
 
+.card:hover {
+    box-shadow:inset 0px 0px 0px 1px darkblue;
+}
+
 .reminder {
     font-size: 14px;
     margin: 4px;
     z-index: 100;
     cursor: default;
+    border: 0.5px inset #000;
 }
 
 .reminder:hover {
@@ -27,3 +32,14 @@
     color: #F0F0F0;
 }
 
+.reminder-container {
+    position: relative;
+}
+
+.delete-reminder {
+    color: #000;
+    position: absolute;
+    bottom: 8px;
+    right: 2px;
+    z-index: 200;
+}

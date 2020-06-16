@@ -1,3 +1,11 @@
+<div class="header">
+  <h1 class="title">Jobsity Calendar</h1>
+  <h2 class="subTitle">
+    Double click date to add reminder. <br>
+    Click on reminder to edit.
+  </h2>
+</div>
+
 <div class="calendar-container">
   <div class="calendar-weekdays">
     <ul class="calendar-weekdays_list">
@@ -5,7 +13,7 @@
     </ul>
   </div>
   <div class="calendar-days">
-    <day-card *ngFor="let day of days" [day]="day"></day-card>
+    <day-card *ngFor="let day of _days" [day]="day"></day-card>
   </div>
 
 </div>
